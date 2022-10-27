@@ -11,11 +11,11 @@ const refs = {
 
 let request = "";
 
-refs.searchForm.addEventListener('submit', onSearchBtnClick);
+refs.searchForm.addEventListener('submit', onFormSubmitClick);
 refs.loadMoreBtn.addEventListener('click', onLoadMoreBthClick);
 
-async function onSearchBtnClick(e){
-    e.preventDeafault;
+async function onFormSubmitClick(e){
+    e.preventDefault();
     request = e.currentTarget.elements.searchQuery.value;
     resetPageNumber();
     const imagesFromPixabay = await getImagesFromPixabay(request);
