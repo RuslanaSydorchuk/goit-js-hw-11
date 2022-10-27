@@ -1,1 +1,64 @@
-@import '~node_modules/modern-normalize/modern-normalize.css';
+// @import '~node_modules/modern-normalize/modern-normalize.css';
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+}
+
+input {
+    width: 250px;
+    padding: 7px;
+    background-color: azure;
+
+}
+
+.submit{
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: azure;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.photo-card {
+    width: calc((100% - 60px) / 4);
+    text-decoration: none;
+}
+
+.card-image {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.info {
+display: flex;
+text-align: center;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.load-more {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.is-hidden {
+    visibility: hidden;
+}
