@@ -1,5 +1,7 @@
 import Notiflix from 'notiflix';
 
+// import {getImagesFromPixabay} from './pictures-api';
+
 const refs ={
     loadMoreBtn: document.querySelector('.load-more'),
     gallery: document.querySelector('.gallery'),
@@ -28,9 +30,8 @@ return images.map((image) =>{
 
     const imageThumbMarkup = `
 <a class="photo-card" href = "${largeImage}">
-        <img class = "card-image" src="${smallImage}" 
-        alt="${description}" loading="lazy" />
-
+<div class = photo-thumb>
+    <img class = "card-image" src="${smallImage}" alt="${description}" loading="lazy" />
     <div class="info">
         <p class="info-item">
             <b>Likes</b>
@@ -49,6 +50,7 @@ return images.map((image) =>{
             ${downloadsAmount}
         </p>
     </div>
+    </div>
 </a>`
 
     return imageThumbMarkup
@@ -56,13 +58,13 @@ return images.map((image) =>{
 };
 
 function allocateGalleryMarkup(markup){
-    gallery.innerHTML = markup
+    refs.gallery.innerHTML = markup
 };
 
 function createGallery(imagesFromPixabay){
     if(imagesFromPixabay.hits.length === 0){
         Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");
-        gallery.innerHTML = "";
+        refs.gallery.innerHTML = "";
         return;
     }
 
@@ -71,13 +73,13 @@ function createGallery(imagesFromPixabay){
     makeloadMoreBtnVisible();
 };
 
-function fullGallery (){
+function fullGallery (imagesFromPixabay){
     const moreImages = galleryMarkup(imagesFromPixabay.hits);
     if(imagesFromPixabay.hits.length < 40){
         makeloadMoreBtnInvisible()
     }
-    gallery.insertAdjacentHTML('beforeend', moreImages)
-} 
+    refs.gallery.insertAdjacentHTML('beforeend', moreImages)
+};
 
 export { createGallery }
 export { fullGallery }

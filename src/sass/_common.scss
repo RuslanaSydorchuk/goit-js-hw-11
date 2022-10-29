@@ -7,6 +7,7 @@
     padding-bottom: 15px;
     border-radius: 5px;
     background-color: cornflowerblue;
+    margin-bottom: 20px;
 }
 
 input {
@@ -16,47 +17,67 @@ input {
 
 }
 
+button{
+    background-color: azure;
+}
+
 .submit{
     margin-left: 10px;
     display: flex;
     justify-content: center;
     text-align: center;
     cursor: pointer;
-    background-color: azure;
 }
 
 .gallery {
+    margin-bottom: 30px;
+    margin-top: 20px;
+
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
+    
 }
 
 .photo-card {
-    width: calc((100% - 60px) / 4);
+    width: calc((100% - 80px) / 4);
     text-decoration: none;
+    min-width: 360px;
+
 }
 
 .card-image {
     margin: 0;
+    display: block;
+
     width: 100%;
-    height: 100%;
+    height: 180px;
+    object-fit: cover;
 }
 
 .info {
-display: flex;
-text-align: center;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+
 }
 
 .info-item {
+    margin: 0;
+
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    color: #000;
 }
 
 .load-more {
-    display: flex;
-    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+
     text-align: center;
     cursor: pointer;
+    
 }
 
 .is-hidden {
