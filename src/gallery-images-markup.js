@@ -65,6 +65,7 @@ function createGallery(imagesFromPixabay){
     if(imagesFromPixabay.hits.length === 0){
         Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");
         refs.gallery.innerHTML = "";
+        makeloadMoreBtnInvisible()
         return;
     }
 
